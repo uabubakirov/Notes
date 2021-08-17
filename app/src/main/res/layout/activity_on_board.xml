@@ -26,7 +26,6 @@
             android:layout_marginLeft="119dp"
             android:textSize="24sp"
             android:layout_marginTop="19dp"
-            android:text="Начать работу"
             android:textColor="#8E8B8B"
             />
 

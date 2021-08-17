@@ -23,7 +23,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Заметки"
-                android:layout_marginStart="150dp"
+                android:layout_marginStart="100dp"
                 android:textSize="24sp"
                 android:textColor="#B1B1B1"
                 />

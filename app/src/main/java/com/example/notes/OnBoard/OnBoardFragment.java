@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import com.example.notes.R;
 import com.example.notes.databinding.FragmentOnBoardBinding;
+import com.example.notes.utils.PrefHelper;
 
 /**
  * A simple {@link Fragment} subclass.

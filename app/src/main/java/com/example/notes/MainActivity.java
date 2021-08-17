@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
 
+import com.example.notes.utils.PrefHelper;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
@@ -36,11 +37,16 @@ public class MainActivity extends AppCompatActivity {
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
+//        if(!PrefHelper.getOnBoardIsShown()){
+//            navController.navigate(R.id.onBoardFragment3);
+//            return;
+//        }
         binding.appBarMain.fab.setOnClickListener(view -> {
             navController.navigate(R.id.addNewNote);
         });
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+        navigationChangedListener(navController);
     }
     private void navigationChangedListener(NavController navController) {
         navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
@@ -52,12 +58,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
 
     @Override
     public boolean onSupportNavigateUp() {

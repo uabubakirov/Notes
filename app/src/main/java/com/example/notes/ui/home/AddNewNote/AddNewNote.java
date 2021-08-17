@@ -24,9 +24,9 @@ import java.util.Locale;
 public class AddNewNote extends Fragment {
     FragmentAddNewNoteBinding binding;
     Date currentDate = new Date();
-    DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy", Locale.getDefault());
+    DateFormat dateFormat = new SimpleDateFormat("dd.MMMM", Locale.getDefault());
     String dateText = dateFormat.format(currentDate);
-    DateFormat timeFormat = new SimpleDateFormat("HH:mm:ss", Locale.getDefault());
+    DateFormat timeFormat = new SimpleDateFormat("HH:mm", Locale.getDefault());
     String timeText = timeFormat.format(currentDate);
 
 
@@ -49,9 +49,9 @@ public class AddNewNote extends Fragment {
                 String text = binding.etDescription.getText().toString().trim();
                 if (!text.isEmpty()){
                     Bundle bundle = new Bundle();
+                    bundle.putString("text",text);
                     bundle.putString("date",dateText);
                     bundle.putString("time",timeText);
-                    bundle.putString("text",text);
                     getParentFragmentManager().setFragmentResult("send",bundle);
                     NavController navController = Navigation.findNavController(requireActivity(),R.id.nav_host_fragment_content_main);
                     navController.navigateUp();
@@ -59,8 +59,6 @@ public class AddNewNote extends Fragment {
                 }
             }
         });
-
-
     }
 
     @Override

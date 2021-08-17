@@ -27,4 +27,9 @@
         android:name="com.example.notes.ui.home.AddNewNote.AddNewNote"
         android:label="fragment_add_new_note"
         tools:layout="@layout/fragment_add_new_note" />
+    <fragment
+        android:id="@+id/onBoardFragment3"
+        android:name="com.example.notes.OnBoard.OnBoardFragment"
+        android:label="fragment_on_board"
+        tools:layout="@layout/fragment_on_board" />
 </navigation>

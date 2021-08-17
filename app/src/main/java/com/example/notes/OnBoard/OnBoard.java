@@ -10,6 +10,7 @@ import android.view.View;
 import com.example.notes.MainActivity;
 import com.example.notes.R;
 import com.example.notes.databinding.ActivityOnBoardBinding;
+import com.example.notes.utils.PrefHelper;
 
 import java.util.ArrayList;
 import java.util.List;
